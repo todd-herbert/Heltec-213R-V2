@@ -5,12 +5,13 @@ Supports run-time graphics and text generation using Adafruit-GFX (via [ZinggJM/
 
 This is made possible with *"paging".*
 
-[Huh? Paging?](#what-is-paging)  
-[Using the library](#using-the-library)  
-[Wiring](#wiring)  
-[Configuration](#configuration)  
-[Is my display supported?](#is-my-display-supported)  
-[Acknowledgements](#acknowledgements)  
+[Huh? Paging?](#what-is-paging)
+[Using the library](#using-the-library)
+[Wiring](#wiring)
+[Configuration](#configuration)
+[Power Management](#power-management)
+[Is my display supported?](#is-my-display-supported)
+[Acknowledgements](#acknowledgements)
 
 
 ## What is paging?
@@ -70,6 +71,7 @@ In the interest of laziness, I'm going to direct you to [the official adafruit-g
   * bottom()
   * centerX()
   * centerY()
+  * setCursorCorner() --- *sets text-cursor position by upper-left corner value*
 
 ### Screen Update
 The E-INK display will begin to update as soon as the ```while ( calculating() )``` loop has finished. By default, this process blocks any further code execution until complete. 
@@ -111,6 +113,14 @@ All warnings aside, connection isn't all that hard. Just be sure to implement so
 Make sure to specify the location of your *D/C, CS* and *BUSY* pins in the constructor.
 
 ## Configuration
+### External Libraries
+A known working copy of GFX_Root is bundled with this library, however if for some reason you need to use an external version of GFX_Root or Adafruit_GFX, this is possible by using one the following two macros before the first include:
+```c++
+//#define  HELTEC_USE_EXTERNAL_GFX_ROOT
+//#define  HELTEC_USE_EXTERNAL_ADAFRUIT_GFX
+
+#include "heltec_213r_v2.h"
+```
 ### Constructor
 ```c++
 Heltec_213R_V2  panel(dc, cs, busy);
@@ -127,14 +137,32 @@ panel.begin(panel.PAGESIZE_LARGE); 	//800kb of SRAM, 40% of total (Arduino UNO)
 ``` 
 If `begin()` is called with no parameters, `PAGESIZE_MEDIUM` is selected.
 
-### External Libraries
-A known working copy of GFX_Root is bundled with this library, however if for some reason you need to use an external version of GFX_Root or Adafruit_GFX, this is possible by using one the following two macros before the first include:
-```c++
-//#define  HELTEC_USE_EXTERNAL_GFX_ROOT
-//#define  HELTEC_USE_EXTERNAL_ADAFRUIT_GFX
+With `begin()`, it is also possible to set two callback functions, wake and sleep. This brings us to..
+## Power Management
+Many E-Ink displays are able to enter a "deep sleep" power-saving mode. With the *Heltec 2.13" Red V2* display, this is technically possible, however the reset pin on the controller IC has not been broken out, meaning that there  is no easy way wake the display without cycling power.
 
-#include "heltec_213r_v2.h"
+I haven't tested the idea, but instead of dealing with all that, I see no reason why a transistor couldn't be used to power on and power off the display as required.
+
+To serve this purpose, two callbacks may be specifed through the `.begin()`method
+```c++
+void wake() {
+	//Connect power to display
+} 
+
+void sleep() {
+	//Remove power from display
+}
+
+void setup() {
+	panel.begin(panel.PAGESIZE_MEDIUM, wake, sleep);
+}
 ```
+The library will run these callbacks as needed to power the display up to allow image updating.
+
+Note: Callbacks will not work if `calculating()` is run in the background (i.e. with blocking = false: ```calculating(false)``` ). In this case it is up to the user to manually check `busy()` and power down when appropriate.
+
+
+
 
 ## Is my display supported?
 This particular library supports one single model. At some stage, I may develop further libraries for various other Heltec displays.
