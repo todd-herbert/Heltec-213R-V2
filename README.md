@@ -1,17 +1,17 @@
-﻿
+
 # Heltec-213R-V2
 Arduino Library for the **Heltec 2.13 Inch Red V2** E-Ink Display
 Supports run-time graphics and text generation using Adafruit-GFX (via [ZinggJM/GFX_Root](https://github.com/ZinggJM/GFX_Root))
 
 This is made possible with *"paging".*
 
-[Huh? Paging?](#what-is-paging)  
-[Using the library](#using-the-library)  
-[Wiring](#wiring)  
-[Configuration](#configuration)  
-[Power Management](#power-management)  
-[Is my display supported?](#is-my-display-supported)  
-[Acknowledgements](#acknowledgements)  
+[Huh? Paging?](#what-is-paging)
+[Using the library](#using-the-library)
+[Wiring](#wiring)
+[Configuration](#configuration)
+[Power Management](#power-management)
+[Is my display supported?](#is-my-display-supported)
+[Acknowledgements](#acknowledgements)
 
 
 ## What is paging?
@@ -58,7 +58,9 @@ This loop repeats the commands for each little slice (page) of the screen, as ma
 
 That's it! Everything else (should) be taken care of automatically.
 ### Drawing
-In the interest of laziness, I'm going to direct you to [the official adafruit-gfx tutorial](https://learn.adafruit.com/adafruit-gfx-graphics-library/graphics-primitives) for information on the drawing commands. This library *should* work pretty much the same, with a few small exceptions:
+In the interest of laziness, I'm going to direct you to [the official adafruit-gfx tutorial](https://learn.adafruit.com/adafruit-gfx-graphics-library/graphics-primitives) for information on the drawing commands. 
+
+This library *should* work pretty much the same, with a few small exceptions:
 * The Heltec 2.13" Red V2 display only supports three colors:
   * ```.BLACK```
   * ```.WHITE```
@@ -72,6 +74,10 @@ In the interest of laziness, I'm going to direct you to [the official adafruit-g
   * centerX()
   * centerY()
   * setCursorCorner() --- *sets text-cursor position by upper-left corner value*
+  
+As decided by the Adafruit library, the ancient *"XBitmap"* is the format of choice for pre-rendered graphics. Luckily, GIMP maintains good support for it.
+
+If you need a hint on how to use it, I have thrown together a [tutorial on preparing XBitmap images](https://github.com/todd-herbert/Heltec-213R-V2/blob/main/docs/XBitmapTutorial/xbitmap-tutorial.md).
 
 ### Screen Update
 The E-INK display will begin to update as soon as the ```while ( calculating() )``` loop has finished. By default, this process blocks any further code execution until complete. 
