@@ -34,7 +34,7 @@ Keeping the dimensions of your display in mind, it is now time to resize your im
 
 Note that the new dimensions of 250x157 are still too large for my 250x122 display, so I will now crop the image using the *Image* -> *Canvas Size* dialog.
 
-![scale](https://github.com/todd-herbert/Heltec-213R-V2/blob/main/docs/XBitmapTutorial/3C_crop.png?raw=true)
+![scale](https://github.com/todd-herbert/Heltec-213R-V2/blob/main/docs/XBitmapTutorial/3C_crop.png?raw=true)  
 Entering the desired height, and then pushing *Center* will give the right dimensions for the crop operation.
 
 ## Define a Color Palette
@@ -109,7 +109,7 @@ Every red pixel in the image copy will be deleted and replaced with white, leavi
 
 ![scale](https://github.com/todd-herbert/Heltec-213R-V2/blob/main/docs/XBitmapTutorial/3C_color_map.png?raw=true)
 
-#### Export as XBitmap
+## Export as XBitmap
 
 At this stage it is time to export one of our XBitmaps: the one with with the black data.
 
@@ -134,7 +134,7 @@ Place the XBitmap file (now with `.h` ending) in the same directory as your .ino
 2. Inside this `.h`  file, the data type of the *"image bits array"* needs to be changed. Add `PROGMEM const` before the `static unsigned char xxxx_bits[] = {` part.
  This step specifies that the XBitmap data must be stored in the flash memory space, not in the valuable SRAM space. This is a requirement of the drawXBitmap() method.
 
-### Drawing the XBitmaps
+## Drawing the XBitmaps
 You can now include your xbitmap files as a headers
 ```c++
 #include "parrot_black.h"
