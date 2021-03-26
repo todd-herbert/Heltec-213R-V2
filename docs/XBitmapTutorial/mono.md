@@ -3,7 +3,7 @@
 1. [Install GIMP](#install-gimp)
 2. [Resize Image](#resize-image)
 3. [Indexed Color](#change-to-indexed-color-mode)
-4. [Export](export-as-xbitmap)
+4. [Export](#export-as-xbitmap)
 5. [Import & Modify](#importing-and-modifying)
 6. [Drawing the Xbitmap](#drawing-the-xbitmap)
 ## Install GIMP
