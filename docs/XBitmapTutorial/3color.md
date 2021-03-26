@@ -6,8 +6,9 @@
 4. [Indexed Color](#change-to-indexed-color-mode)
 5. [Isolate Colors](#isolating-colors)
 6. [Export](#export-as-xbitmap)
-7. [Import & Modify](#importing-and-modifying)
-8. [Drawing the Xbitmaps](#drawing-the-xbitmaps)
+7. [Repeat](#rinse-and-repeat)
+8. [Import & Modify](#importing-and-modifying)
+9. [Drawing the Xbitmaps](#drawing-the-xbitmaps)
 ## Install GIMP
 GIMP (GNU Image Manipulation Program) is a free and powerful image editor that is capable of exporting XBitmap images.
 If you haven't already done so, head over to https://www.gimp.org/ and download it now.
