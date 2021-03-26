@@ -183,7 +183,9 @@ Front | Rear
 ![V2 Front](https://github.com/todd-herbert/Heltec-213R-V2/blob/main/docs/V2-Front.png?raw=true)| ![V2 Front](https://github.com/todd-herbert/Heltec-213R-V2/blob/main/docs/V2-Rear.png?raw=true)
 
 ## Installation
-Library can be installed to Arduino IDE with *Sketch* -> *Include Library* -> *Add .Zip Library..*, or alternatively, can be installed to Platform.io by extracting the Zip file to the lib folder of your project.
+**Arduino:** Library can be installed to Arduino IDE with *Sketch* -> *Include Library* -> *Add .Zip Library..*
+
+**Platform.io:** Available through the built-in library registiry, or alternatively, can be installed by extracting the Zip file to the lib folder of your project.
 
 # Acknowledgements
 This library is inspired by [GxEPD2](https://github.com/ZinggJM/GxEPD2), a similar project for Goodisplay and Waveshare displays.
