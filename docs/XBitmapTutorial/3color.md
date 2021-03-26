@@ -5,7 +5,7 @@
 3. [Define Color Palette](#define-a-color-palette)
 4. [Indexed Color](#change-to-indexed-color-mode)
 5. [Isolate Colors](#isolating-colors)
-6. [Export](export-as-xbitmap)
+6. [Export](#export-as-xbitmap)
 7. [Import & Modify](#importing-and-modifying)
 8. [Drawing the Xbitmap](#drawing-the-xbitmap)
 ## Install GIMP
