@@ -145,9 +145,9 @@ If `begin()` is called with no parameters, `PAGESIZE_MEDIUM` is selected.
 
 With `begin()`, it is also possible to set two callback functions, wake and sleep. This brings us to..
 ## Power Management
-Many E-Ink displays are able to enter a "deep sleep" power-saving mode. With the *Heltec 2.13" Red V2* display, this is technically possible, however the reset pin on the controller IC has not been broken out, meaning that there  is no easy way wake the display without cycling power.
+Many E-Ink displays are able to enter a "deep sleep" power-saving mode. With the *Heltec 2.13" Red V2* display, this is technically possible, however the reset pin on the controller IC has not been broken out, meaning that there is no easy way to wake the display without cycling power.
 
-I haven't tested the idea, but instead of dealing with all that, I see no reason why a transistor couldn't be used to power on and power off the display as required.
+I haven't tested the idea, but I see no reason why a transistor couldn't be used to power on and power off the display as required.
 
 To serve this purpose, two callbacks may be specifed through the `.begin()`method
 ```c++
