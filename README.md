@@ -119,14 +119,6 @@ All warnings aside, connection isn't all that hard. Just be sure to implement so
 Make sure to specify the location of your *D/C, CS* and *BUSY* pins in the constructor.
 
 ## Configuration
-### External Libraries
-A known working copy of GFX_Root is bundled with this library, however if for some reason you need to use an external version of GFX_Root or Adafruit_GFX, this is possible by using one the following two macros before the first include:
-```c++
-//#define  HELTEC_USE_EXTERNAL_GFX_ROOT
-//#define  HELTEC_USE_EXTERNAL_ADAFRUIT_GFX
-
-#include "heltec_213r_v2.h"
-```
 ### Constructor
 ```c++
 Heltec_213R_V2  panel(dc, cs, busy);
