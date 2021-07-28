@@ -37,6 +37,7 @@ By changing to *Indexed Color Mode*, we are reducing the entire image down to a 
 
 After zooming in, to get a better look at the image, open the *Indexed Color Conversion* dialog by selecting *Image*-> *Mode* -> *Indexed..*
 ![scale](https://github.com/todd-herbert/Heltec-213R-V2/blob/main/docs/XBitmapTutorial/index.png?raw=true)
+
 You can then select "Use black and white (1-bit) palette".
 
 An important option to explore here is *Dithering*.
