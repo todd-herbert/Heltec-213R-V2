@@ -29,6 +29,7 @@ Use the *Image* -> *Scale Image* dialog in GIMP to achieve an appropriate size.
 Note that the new dimensions of 250x141 are still too large for my 250x122 display, so I will now crop the image using the *Image* -> *Canvas Size* dialog.
 
 ![scale](https://github.com/todd-herbert/Heltec-213R-V2/blob/main/docs/XBitmapTutorial/crop.png?raw=true)
+
 Entering the desired height, and then pushing *Center* will give the right dimensions for the crop operation.
 
 ## Change to "Indexed Color Mode"
