@@ -1,5 +1,12 @@
 
-# Heltec-213R-V2
+## Project has merged with heltec-eink-modules ##
+### Please use the updated version available at [https://github.com/todd-herbert/heltec-eink-modules](https://github.com/todd-herbert/heltec-eink-modules) ###
+<br />
+This code-base remains, achived, to support any legacy implementations.
+
+<hr />
+
+### Heltec-213R-V2 ###
 Arduino Library for the **Heltec 2.13 Inch Red V2** E-Ink Display
 Supports run-time graphics and text generation using Adafruit-GFX (via [ZinggJM/GFX_Root](https://github.com/ZinggJM/GFX_Root))
 
